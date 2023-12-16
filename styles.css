@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  body {
+    background-image: url("HTML/space.jpg");
+    background-color: rgb(43, 43, 65);
+}
+
+  .header img {
+    border: none; 
+}
+  
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #0c2499;
+    
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .navLinks {
+    list-style: none;
+    display: flex;
+  }
+  .navLinks a,
+  .contact,
+  .overlayContent a {
+    font-family: „Roboto”, sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  
+  .navLinks li {
+    padding: 0px 20px;
+  }
+  .navLinks li a {
+    transition: all 0.5s ease 0s;
+  }
+  .navLinks li a:hover {
+    color: #0c9c13;
+  }
+  .contact {
+    margin-left: 20px;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  .contact:hover {
+    background-color: red;
+  }
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    max-width: 500px; 
+    max-height: 800px;
+    margin: 0 auto; 
+    
+}
+
+.overlayContent {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 15px;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+    color: #818181;
+}
+
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.column-wrapper {
+  flex: 0 1 50%
+  
+}
+
+.red,
+.green,
+.blue,
+.yellow {
+  flex: 0 1 25%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.red {
+  background-color: rgba(0, 119, 255, 0.486);
+  flex: 0 1 25%;
+  margin: 10px;
+  
+}
+
+.green {
+  background-color: green;
+  flex: 0 1 25%;
+  margin: 10px;
+}
+
+.yellow {
+  background-color: yellow;
+  flex: 0 1 25%;
+  margin: 20px;
+  
+}
+
+.blue {
+  background-color: blueviolet;
+  flex: 0 1 25%;
+  margin: 10px;
+}
+
+.blue, .yellow {
+  height: 50%;
+}
+
+img {
+  max-width: 100%; /* Dodałem, to aby obraz nie przekraczał szerokości kontenera */
+  max-height: 100%; /* Dodałem to, aby obraz nie przekraczał wysokości kontenera */
+}
