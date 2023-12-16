@@ -1,32 +1,77 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Navbar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NASA PAGE</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:ght&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arial:400&display=swap" rel="stylesheet">
+    <!-- Dodany link do czcionki Arial -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Styl dla całego dokumentu */
+        body {
+            background-image: url("HTML/space.jpg");
+            background-color: rgb(43, 43, 65);
+
+        }
+
+        header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 30px 10%;
+            background-color: #0c2499;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .navLinks a,
+        .contact,
+        .overlayContent a,
+        .item-1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 500;
+            color: #d10e5f;
+            text-decoration: none;
+        }
+
+        .contact {
+            margin-left: 20px;
+            padding: 9px 25px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+
+        .contact:hover {
+            background-color: red;
+        }
+
         .yellow img {
             max-width: 200px;
             /* Ogranicza szerokość obrazu do szerokości kontenera */
             height: 200px;
-            
+
 
         }
 
         .yellow {
-        text-align: center;
-    }
+            text-align: center;
+        }
 
-    .yellow img {
-        display: inline-block;
-    }
-
+        .yellow img {
+            display: inline-block;
+        }
     </style>
 </head>
 
@@ -35,7 +80,7 @@
 
     <header>
         <a class="logo" href="/">
-            <img style="border: none;" src="logo.png" alt="LogoContainer" width="90" height="80">
+            <img style="border: none;" src="HTML/logo.png" alt="LogoContainer" width="90" height="80">
         </a>
         <nav>
             <ul class="navLinks">
@@ -47,8 +92,8 @@
         </nav>
         <a class="contact" href="#"><i class="fa fa-envelope"></i> Contact</a>
         <p id="mobileMenuBtn" class="menu contact"><i class="fa fa-bars"></i> Menu</p>
-
     </header>
+
     <div id="mobileMenu" class="overlay">
         <a class="close" id="closeMobileMenuBtn">&times;</a>
         <div class="overlayContent">
@@ -62,14 +107,22 @@
 
     <div class="container">
         <div class="red">
-            <p> 
+            <p>
             <address>
-                300 Hidden Figures Way SW<br>
+                <strong>300 Hidden Figures Way SW</strong><br>
                 Washington, D.C.<br></p>
-                
-                <a href="mailto:info@example.com">info@example.com</a>
+
+                <p><a href="mailto:info@example.com"><strong>info@example.com</strong></a></p><br>   
+
+                <div class="interactive-text" onclick="handleClick()" onmouseover="handleHover()" onmouseout="handleMouseOut()">
+                    Hover me! Click me!
+                </div>
+
             </address>
         </div>
+        
+
+
         <div class="column-wrapper">
             <div class="blue">
                 <p style="text-align: center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
@@ -87,7 +140,7 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
             </div>
             <div class=".yellow img">
-                <img src="nasa.jpg" alt="Yellow Image">
+                <img src="HTML/nasa.jpg" alt="Yellow Image">
             </div>
         </div>
         <div class="green">
