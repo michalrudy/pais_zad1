@@ -14,4 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
     } else {
         console.error("One or more elements not found.");
     }
+    function handleClick() {
+        alert("You clicked me!");
+    }
+    
+    function handleHover() {
+        document.querySelector('.interactive-text').style.textDecoration = 'underline';
+    }
+    
+    function handleMouseOut() {
+        document.querySelector('.interactive-text').style.textDecoration = 'none';
+    }
+
+
+
 });
