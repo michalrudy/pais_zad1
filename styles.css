@@ -1,162 +1,181 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>NASA PAGE</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Arial:400&display=swap" rel="stylesheet">
-    <!-- Dodany link do czcionki Arial -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Styl dla całego dokumentu */
-        body {
-            background-image: url("HTML/space.jpg");
-            background-color: rgb(43, 43, 65);
-
-        }
-
-        header {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding: 30px 10%;
-            background-color: #0c2499;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        }
-
-        .navLinks a,
-        .contact,
-        .overlayContent a,
-        .item-1 {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 500;
-            color: #d10e5f;
-            text-decoration: none;
-        }
-
-        .contact {
-            margin-left: 20px;
-            padding: 9px 25px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease 0s;
-        }
-
-        .contact:hover {
-            background-color: red;
-        }
-
-        .yellow img {
-            max-width: 200px;
-            /* Ogranicza szerokość obrazu do szerokości kontenera */
-            height: 200px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
 
-        }
+  body {
+    background-image: url("HTML/space.jpg");
+    background-color: rgb(43, 43, 65);
+}
 
-        .yellow {
-            text-align: center;
-        }
+  .header img {
+    border: none; 
+}
+  
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #0c2499;
+    
+  }
+  .logo {
+    margin-right: auto;
+  }
+  .navLinks {
+    list-style: none;
+    display: flex;
+  }
+  .navLinks a,
+  .contact,
+  .overlayContent a {
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+  }
+  
+  
+  .navLinks li {
+    padding: 0px 20px;
+    flex-shrink: 0;
+    max-width: 150px;
+    overflow: hidden;
+  }
+  
+  .navLinks li a {
+    transition: all 0.5s ease 0s;
+  }
+  .navLinks li a:hover {
+    color: #0c9c13;
+  }
+  .contact {
+    margin-left: 20px;
+    padding: 9px 25px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+  }
+  .contact:hover {
+    background-color: red;
+  }
 
-        .yellow img {
-            display: inline-block;
-        }
-    </style>
-</head>
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+    max-width: 500px; 
+    max-height: 800px;
+    margin: 0 auto; 
+    
+}
 
-<body>
+.overlayContent {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
 
+.overlay a {
+    padding: 15px;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+}
 
-    <header>
-        <a class="logo" href="/">
-            <img style="border: none;" src="HTML/logo.png" alt="LogoContainer" width="90" height="80">
-        </a>
-        <nav>
-            <ul class="navLinks">
-                <li><a href="#"><i class="fa fa-rocket"></i> Space Trip</a></li>
-                <li><a href="#"><i class="fa fa-space-shuttle"></i> The Apollo Program</a></li>
-                <li><a href="#"><i class="fa fa-globe"></i> The Discovery Program</a></li>
-                <li><a href="#"><i class="fa fa-info-circle"></i> About NASA</a></li>
-            </ul>
-        </nav>
-        <a class="contact" href="#"><i class="fa fa-envelope"></i> Contact</a>
-        <p id="mobileMenuBtn" class="menu contact"><i class="fa fa-bars"></i> Menu</p>
-    </header>
+.overlay a:hover,
+.overlay a:focus {
+    color: #818181;
+}
 
-    <div id="mobileMenu" class="overlay">
-        <a class="close" id="closeMobileMenuBtn">&times;</a>
-        <div class="overlayContent">
-            <a href="#"><i class="fa fa-rocket"></i> Space Trip</a>
-            <a href="#"><i class="fa fa-space-shuttle"></i> The Apollo Program</a>
-            <a href="#"><i class="fa fa-globe"></i> The Discovery Program</a>
-            <a href="#"><i class="fa fa-info-circle"></i> About NASA</a>
-        </div>
-    </div>
-    <script type="text/javascript" src="scripts.js"></script>
+.overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
 
-    <div class="container">
-        <div class="red">
-            <p>
-            <address>
-                <strong>300 Hidden Figures Way SW</strong><br>
-                Washington, D.C.<br></p>
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
 
-                <p><a href="mailto:info@example.com"><strong>info@example.com</strong></a></p><br>   
+.column-wrapper {
+  flex: 0 1 50%;
+  
+}
 
-                <div class="interactive-text" onclick="handleClick()" onmouseover="handleHover()" onmouseout="handleMouseOut()">
-                    Hover me! Click me!
-                </div>
+.red,
+.green,
+.blue,
+.yellow {
+  flex: 0 1 25%;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-            </address>
-        </div>
-        
+.red {
+  background-color: rgba(0, 119, 255, 0.486);
+  flex: 0 1 25%;
+  margin: 10px;
+  
+}
 
+.green {
+  background-color: green;
+  flex: 0 1 25%;
+  margin: 10px;
+}
 
-        <div class="column-wrapper">
-            <div class="blue">
-                <p style="text-align: center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
-                    do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit
-                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                    est laborum.<br>
+.yellow {
+  background-color: yellow;
+  flex: 0 1 25%;
+  margin: 20px;
+  
+}
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-            </div>
-            <div class=".yellow img">
-                <img src="HTML/nasa.jpg" alt="Yellow Image">
-            </div>
-        </div>
-        <div class="green">
-            <p style="text-align: center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br>
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br>
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.<br> </p>
-        </div>
-    </div>
+.blue {
+  background-color: blueviolet;
+  flex: 0 1 25%;
+  margin: 10px;
+}
 
+.blue, .yellow {
+  height: 50%;
+}
 
+img {
+  max-width: 100%; /* Dodałem to, aby obraz nie przekraczał szerokości kontenera */
+  max-height: 100%; /* Dodałem to, aby obraz nie przekraczał wysokości kontenera */
+}
 
+	
+.interactive-text {
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s, font-size 0.3s;
+}
 
-</body>
+.interactive-text:hover {
+  color: #ffcc00;
+  font-size: 18px;
+}
 
-</html>
